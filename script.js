@@ -3,29 +3,48 @@ var boxes = document.querySelectorAll(".box");
 
 var boxesAmt = boxes.length;
 
-var backColor = "grey";
+var backColor;
 
-for (var i = 0; i < boxesAmt; i += 1) {
-    
-    if (201 <= boxesAmt <= 300) {
+if (boxesAmt >= 200 && boxesAmt <= 300) {
         var backColor = "yellow";
-    } else if (301 <= boxesAmt <= 400) {
+    } else if (boxesAmt > 300 && boxesAmt <= 400) {
         var backColor = "green";
-    } else if (401 <= boxesAmt <= 500) {
+    } else if (boxesAmt > 400 && boxesAmt <= 500) {
         var backColor = "purple";
-    } else if (501 <= boxesAmt <= 600) {
+    } else if (boxesAmt > 500 && boxesAmt <= 600) {
         var backColor = "orange";
-    } else if (601 <= boxesAmt <= 700) {
+    } else if (boxesAmt > 600 && boxesAmt <= 700) {
         var backColor = "pink";
-    } else if (701 <= boxesAmt <= 800) {
+    } else if (boxesAmt > 700 && boxesAmt <= 800) {
         var backColor = "black";
-    } else if (801 <= boxesAmt <= 900) {
+    } else if (boxesAmt > 800 && boxesAmt <= 1000) {
         var backColor = "brown";
-    }
-
-    function clickedBox() {
-        boxes[].style.backgroundColor = backColor;
-    }
-    
-    boxes[i].addEventListener("click", clickedBox)
+    } else {
+        var backColor = "blue";
 }
+    
+console.log(boxesAmt);
+console.log(backColor);
+
+
+
+function clickedBox() {
+
+
+    for (var i = 0; i < boxesAmt; i++) {
+
+
+    //boxes[i].addEventListener("click", clickedBox);
+
+    //function clickedBox() {
+      boxes[i].style.backgroundColor = backColor;
+    //}
+
+    }
+}
+
+for (var i = 0; i < boxesAmt; i++) {
+    boxes[i].addEventListener("click", clickedBox);
+}
+
+//boxes[i].addEventListener("click", clickedBox);
