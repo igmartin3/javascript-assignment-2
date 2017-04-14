@@ -5,6 +5,7 @@ var boxesAmt = boxes.length;
 
 var backColor;
 
+//Had to separate the conditions with &&
 if (boxesAmt >= 200 && boxesAmt <= 300) {
         var backColor = "yellow";
     } else if (boxesAmt > 300 && boxesAmt <= 400) {
@@ -27,24 +28,43 @@ console.log(boxesAmt);
 console.log(backColor);
 
 
-
+//Function only operates on click in the
+//first for loop (technically first)
 function clickedBox() {
 
 
     for (var i = 0; i < boxesAmt; i++) {
 
 
-    //boxes[i].addEventListener("click", clickedBox);
-
-    //function clickedBox() {
+    
       boxes[i].style.backgroundColor = backColor;
-    //}
+    
 
     }
 }
 
+//Added another for loop after I kept getting
+//style undefined error message
+//Why I think it works: maybe the "i" variable
+//can only apply to 1 command...?
 for (var i = 0; i < boxesAmt; i++) {
     boxes[i].addEventListener("click", clickedBox);
-}
 
-//boxes[i].addEventListener("click", clickedBox);
+    boxes[i].onclick = function() {
+
+
+        var selected = event.target;
+        selected.classList.toggle("clicked")
+        //var classy = document.getElementsByClassName.selected;
+
+        //if (classy == "box") {
+        //   boxes[i].classList.toggle("clicked");
+        //}
+
+        console.log(selected);
+       
+        
+        
+    }
+
+}
