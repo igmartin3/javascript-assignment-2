@@ -50,11 +50,17 @@ function clickedBox() {
 for (var i = 0; i < boxesAmt; i++) {
     boxes[i].addEventListener("click", clickedBox);
 
+    //When a click occurs, go to this function
     boxes[i].onclick = function() {
 
-
+        //Indicate what exact target was clicked
+        //and store this in a variable
         var selected = event.target;
+        //From this variable toggle between the class
+        //"clicked" and "box"
         selected.classList.toggle("clicked")
+
+        
         //var classy = document.getElementsByClassName.selected;
 
         //if (classy == "box") {
